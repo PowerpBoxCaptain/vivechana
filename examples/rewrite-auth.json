@@ -1,0 +1,52 @@
+{
+  "title": "Our auth service is creaking — what do we do?",
+  "date": "2026-06-29",
+  "note": "A decision every team has had. Highest intrinsic worth (K) is not the same as build-now — the gate is feasibility (F≥4).",
+  "options": [
+    {
+      "name": "Rewrite in Rust",
+      "reversibility": "RECOVERABLE",
+      "axes": {
+        "I":   { "v": 6, "grade": "E", "anchor": "affects every authenticated request — most of the system" },
+        "L":   { "v": 8, "grade": "E", "anchor": "a hardened auth core everything else builds on" },
+        "R":   { "v": 6, "grade": "E", "anchor": "reaches every service that calls auth" },
+        "Rep": { "v": 6, "grade": "E", "anchor": "reusable, but each integration needs wiring" },
+        "F":   { "v": 2, "grade": "E", "anchor": "blocked — months of work, new language in the stack" }
+      }
+    },
+    {
+      "name": "Adopt a proven library",
+      "reversibility": "REVERSIBLE",
+      "axes": {
+        "I":   { "v": 6, "grade": "E", "anchor": "affects every authenticated request" },
+        "L":   { "v": 6, "grade": "E", "anchor": "unlocks SSO/MFA we'd otherwise hand-build" },
+        "R":   { "v": 6, "grade": "E", "anchor": "reaches every service that calls auth" },
+        "Rep": { "v": 7, "grade": "E", "anchor": "config-driven, near drop-in across services" },
+        "F":   { "v": 7, "grade": "M", "anchor": "buildable now — mature library, clear migration path" }
+      }
+    },
+    {
+      "name": "Patch what we have",
+      "reversibility": "REVERSIBLE",
+      "axes": {
+        "I":   { "v": 4, "grade": "M", "anchor": "touches the current auth path only" },
+        "L":   { "v": 3, "grade": "E", "anchor": "no new capability — keeps the lights on" },
+        "R":   { "v": 3, "grade": "E", "anchor": "stays inside one service" },
+        "Rep": { "v": 4, "grade": "E", "anchor": "manual fixes, case by case" },
+        "F":   { "v": 9, "grade": "M", "anchor": "trivial — we can ship today" }
+      }
+    },
+    {
+      "name": "Leave it as-is",
+      "null": true,
+      "reversibility": "REVERSIBLE",
+      "axes": {
+        "I":   { "v": 2, "grade": "M", "anchor": "no change" },
+        "L":   { "v": 1, "grade": "M", "anchor": "no unlock" },
+        "R":   { "v": 1, "grade": "M", "anchor": "no propagation" },
+        "Rep": { "v": 1, "grade": "M", "anchor": "n/a" },
+        "F":   { "v": 10, "grade": "M", "anchor": "trivially feasible to do nothing" }
+      }
+    }
+  ]
+}

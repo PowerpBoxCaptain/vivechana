@@ -12,6 +12,8 @@ npx vivechana
 
 No install, no account, no API key, no network. It runs offline.
 
+![vivechana scoring a real decision — same input, same verdict](media/vivechana-demo.gif)
+
 ---
 
 ## 60-second demo
