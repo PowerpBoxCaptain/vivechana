@@ -1,0 +1,74 @@
+{
+  "title": "First out-of-box OSS product — universality vs domain depth",
+  "date": "2026-06-29",
+  "note": "Decision: which single artifact to open (AGPL) so a stranger can run it in minutes and appreciate it, while the SLM weights + filled 404-mask fleet stay classified (FP-009). Axes graded honestly: external-adoption counts are projections (E/G); 'already exists + deterministic' is measured (M).",
+  "options": [
+    {
+      "name": "Vivechana CLI (npx vivechana — universal decision engine)",
+      "reversibility": "REVERSIBLE",
+      "axes": {
+        "I":   { "v": 6, "grade": "E", "anchor": "between one-desk(5) and broad: every ANKR decision already runs through it + any external decision-maker; external count is a projection" },
+        "L":   { "v": 7, "grade": "E", "anchor": "unlocks 'score don't argue' + check-back bets downstream across any org; below bitmask binary-proof(9-10)" },
+        "R":   { "v": 8, "grade": "E", "anchor": "approaching Forja-STATE reach — domain-agnostic, agents can call it, propagates to any partner/org" },
+        "Rep": { "v": 9, "grade": "M", "anchor": "bitmask trie/hook any-domain-no-code(9-10): deterministic CLI, runs on decision #1000 with zero new code — the OSS ideal" },
+        "F":   { "v": 9, "grade": "M", "anchor": "exists/trivial — vivechana.mjs already runs; packaging as npx is trivial" }
+      }
+    },
+    {
+      "name": "ankr-harness (proof-gated agent harness)",
+      "reversibility": "REVERSIBLE",
+      "axes": {
+        "I":   { "v": 6, "grade": "E", "anchor": "AI devs building agents — sizable external audience; projection" },
+        "L":   { "v": 7, "grade": "E", "anchor": "unlocks proof-gated agency downstream for any agent project" },
+        "R":   { "v": 7, "grade": "E", "anchor": "propagates across agent/LLM ecosystem, below universal substrate reach" },
+        "Rep": { "v": 8, "grade": "E", "anchor": "reusable harness across projects, near hook-level but some per-project wiring" },
+        "F":   { "v": 8, "grade": "M", "anchor": "exists — backlog closed, 319 tests passing" }
+      }
+    },
+    {
+      "name": "Bitmask capability-encoding spec + lib",
+      "reversibility": "REVERSIBLE",
+      "axes": {
+        "I":   { "v": 4, "grade": "E", "anchor": "a primitive — narrow direct out-of-box appreciation; you must build around it to feel value" },
+        "L":   { "v": 8, "grade": "E", "anchor": "near bitmask binary-proof — very high downstream leverage once adopted" },
+        "R":   { "v": 7, "grade": "E", "anchor": "propagates as a protocol across services/agents" },
+        "Rep": { "v": 9, "grade": "M", "anchor": "pure encoding — fully replicable, no per-domain code" },
+        "F":   { "v": 7, "grade": "E", "anchor": "needs packaging + worked-example docs to be usable standalone" }
+      }
+    },
+    {
+      "name": "ankr-ctl (Keeper control plane)",
+      "reversibility": "REVERSIBLE",
+      "axes": {
+        "I":   { "v": 5, "grade": "E", "anchor": "one-desk(5): service operators; solo dev with 1-2 services gets modest out-of-box value" },
+        "L":   { "v": 6, "grade": "E", "anchor": "unlocks governed deploy/lifecycle downstream" },
+        "R":   { "v": 6, "grade": "E", "anchor": "propagates to ops + agents, needs a fleet to show full reach" },
+        "Rep": { "v": 7, "grade": "E", "anchor": "works across services but needs per-host config — below pure-hook" },
+        "F":   { "v": 8, "grade": "M", "anchor": "firmed OSS, exists" }
+      }
+    },
+    {
+      "name": "ComplyMitra OSS edition (domain depth — Indian CA compliance)",
+      "reversibility": "RECOVERABLE",
+      "axes": {
+        "I":   { "v": 4, "grade": "E", "anchor": "narrow niche — Indian CAs; deep appreciation but small direct count" },
+        "L":   { "v": 4, "grade": "E", "anchor": "domain-specific, low downstream leverage to other services" },
+        "R":   { "v": 3, "grade": "E", "anchor": "one-service surfaces(5) or lower — does not propagate across the universe" },
+        "Rep": { "v": 3, "grade": "E", "anchor": "manual per-jurisdiction — kills replicability; each country re-done" },
+        "F":   { "v": 5, "grade": "E", "anchor": "carving an OSS edition out of the gated product is real work + conflicts FP-009 (product gated, not OSS)" }
+      }
+    },
+    {
+      "name": "Stay fully closed (do nothing)",
+      "null": true,
+      "reversibility": "REVERSIBLE",
+      "axes": {
+        "I":   { "v": 1, "grade": "M", "anchor": "no external reach added" },
+        "L":   { "v": 1, "grade": "M", "anchor": "no downstream unlock" },
+        "R":   { "v": 1, "grade": "M", "anchor": "no propagation" },
+        "Rep": { "v": 1, "grade": "M", "anchor": "n/a" },
+        "F":   { "v": 10, "grade": "M", "anchor": "trivially feasible to do nothing" }
+      }
+    }
+  ]
+}

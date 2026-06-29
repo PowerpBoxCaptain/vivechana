@@ -1,0 +1,42 @@
+{
+  "name": "vivechana",
+  "version": "2.0.0",
+  "description": "Deterministic discernment scoring for architectural decisions. Same input → same verdict. Score, don't argue.",
+  "type": "module",
+  "bin": {
+    "vivechana": "bin/vivechana.mjs"
+  },
+  "exports": {
+    ".": "./src/engine.mjs"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "examples/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/engine.test.mjs"
+  },
+  "keywords": [
+    "decision",
+    "scoring",
+    "architecture",
+    "prioritization",
+    "deterministic",
+    "vivechana",
+    "ankr",
+    "cli"
+  ],
+  "author": "Capt. Anil Kumar Sharma",
+  "license": "AGPL-3.0-only",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ankr-labs/vivechana"
+  },
+  "homepage": "https://github.com/ankr-labs/vivechana#readme"
+}
